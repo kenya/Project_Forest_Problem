@@ -1,3 +1,11 @@
+<----- fileの追加方法 ----->
 git add 追加したいfile		fileの追加
 git commit -m "message here"	addの後に必要
 git push			リポジトリに反映する
+
+
+git status			あなたが変更を加えたfileの状態を見る
+
+
+以下参考のこと
+http://sourceforge.jp/magazine/09/03/16/0831212
