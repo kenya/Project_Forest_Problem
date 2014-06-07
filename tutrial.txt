@@ -1,0 +1,3 @@
+git add 追加したいfile		fileの追加
+git commit -m "message here"	addの後に必要
+git push			リポジトリに反映する
