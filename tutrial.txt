@@ -1,5 +1,5 @@
-<----- fileの追加方法 ----->
-git add 追加したいfile		fileの追加
+<----- fileの追加方法 or 編集したfileをリポジトリに適用する方法 ----->
+git add 追加したい(編集した)file		fileの追加
 git commit -m "message here"	addの後に必要
 git push			リポジトリに反映する
 
