@@ -6,25 +6,29 @@ import java.util.ArrayList;
 public class Node extends Object
 {
     /**
-       自身を一意に決定する番号
+       このノードを一意に決定する番号。
     */
     private int nodeId;
     /**
-       親ノードを示すノード
+       このノードの親ノード。
     */
     private Node parent;
     /**
-       自分の子ノードのリスト
+       このノードの子ノードのリスト。
     */
     private List<Node> children;
     /**
-      自分が属する木
+      このノードが属する木。
     */
     //private Tree tree;
+    /**
+       このノードの名前。
+    */ 
+    private String name;
 
     /**
        インスタンスを生成して応答する。
-       自身のIDを設定しておき、
+       このノードのIDを設定しておき、
        親ノード、子ノードリストをそれぞれ初期化しておく。
     */
     public Node(int anId, String aName)
@@ -37,7 +41,7 @@ public class Node extends Object
     
     /**
        インスタンスを生成して応答する。
-       自身のIDを指定された番号に設定し、 
+       このノードのIDを指定された番号に設定し、 
        親ノードに指定されたノードを設定し、
        子ノードリストを初期化しておく。
     */ 
@@ -50,7 +54,7 @@ public class Node extends Object
     }
     /**
        インスタンスを生成して応答する。
-       自身のIDを指定された番号に設定し、
+       このノードのIDを指定された番号に設定し、
        親ノードと子ノードリストに指定されたノード及びリストを設定する。
     */
     public Node(int anId, Node aParentNode, ArrayList<Node> aChildrenList)
@@ -71,7 +75,7 @@ public class Node extends Object
 	return;
     }
     /**
-       子供の数を応答する。
+       このノードの子ノードの数を応答する。
      */
     public int getNumberOfChildren()
     {
@@ -79,21 +83,21 @@ public class Node extends Object
     }
 
     /**
-       ノードIDを応答する
+       このノードのノード番号を応答する
     */
     public int getNodeId()
     {
 	return this.nodeId;
     }
     /**
-       親ノードを応答する。
+       このノードの親ノードを応答する。
     */
     public Node getParent()
     {
 	return this.parent;
     }
     /**
-       子ノードリストを応答する。
+       このノードの子ノードのリストを応答する。
     */
     public List<Node> getChildren()
     {
@@ -101,7 +105,7 @@ public class Node extends Object
     }
 
     /**
-       引数のNodeと自身の一致性を応答する。
+       引数のノードとこのノードの一致性を応答する。
     */
     public boolean equals(Node aNode)
     {
@@ -110,7 +114,7 @@ public class Node extends Object
 	else{ return false; }
     }
     /**
-       引数のnodeIdと自身のnodeIdの一致性を応答する。
+       引数のノード番号とこのノードのノード番号の一致性を応答する。
     */
     public boolean equals(int aNodeId)
     {
