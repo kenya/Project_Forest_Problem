@@ -5,7 +5,10 @@ import java.util.ArrayList;
 
 public class Node extends Object
 {
-    
+    /**
+       自身を一意に決定する番号
+    */
+    private int nodeId;
     /**
        親ノードを示すノード
     */
@@ -14,14 +17,19 @@ public class Node extends Object
        自分の子ノードのリスト
     */
     private List<Node> children;
+    /**
+      自分が属する木
+    */
+    //private Tree tree;
 
     /**
        インスタンスを生成して応答する。
        親ノード、子ノードリストをそれぞれ初期化しておく。
     */
-    public Node()
+    public Node(int anId)
     {
 	super();
+	this.nodeId = anId;
 	this.parent = null;
 	this.children = new ArrayList<Node>();
     }
@@ -31,9 +39,10 @@ public class Node extends Object
        親ノードに指定されたノードを設定し、
        子ノードリストを初期化しておく
     */ 
-    public Node(Node aParentNode)
+    public Node(int anId, Node aParentNode)
     {
 	super();
+	this.nodeId = anId;
 	this.parent = aParentNode;
 	this.children = new ArrayList<Node>();
     }
@@ -41,9 +50,10 @@ public class Node extends Object
        インスタンスを生成して応答する。
        親ノードと子ノードリストに指定されたノード及びリストを設定する。
     */
-    public Node(Node aParentNode, ArrayList<Node> aChildrenList)
+    public Node(int anId, Node aParentNode, ArrayList<Node> aChildrenList)
     {
 	super();
+	this.nodeId = anId;
 	this.parent = aParentNode;
 	this.children = aChildrenList;
     }
@@ -66,6 +76,13 @@ public class Node extends Object
     }
 
     /**
+       ノードIDを応答する
+    */
+    public int getNodeId()
+    {
+	return this.nodeId;
+    }
+    /**
        親ノードを応答する。
     */
     public Node getParent()
@@ -78,6 +95,5 @@ public class Node extends Object
     public List<Node> getChildren()
     {
 	return this.children;
-    }	
-    
+    }
 }
