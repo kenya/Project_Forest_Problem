@@ -27,7 +27,7 @@ public class Node extends Object
        自身のIDを設定しておき、
        親ノード、子ノードリストをそれぞれ初期化しておく。
     */
-    public Node(int anId)
+    public Node(int anId, String aName)
     {
 	super();
 	this.nodeId = anId;
@@ -98,5 +98,23 @@ public class Node extends Object
     public List<Node> getChildren()
     {
 	return this.children;
+    }
+
+    /**
+       引数のNodeと自身の一致性を応答する。
+    */
+    public boolean equals(Node aNode)
+    {
+	if(this.getNodeId() == aNode.getNodeId()){ return true; }
+	
+	else{ return false; }
+    }
+    /**
+       引数のnodeIdと自身のnodeIdの一致性を応答する。
+    */
+    public boolean equals(int aNodeId)
+    {
+	if(this.getNodeId() == aNodeId){ return true; }
+	else{ return false; }
     }
 }
