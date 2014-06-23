@@ -1,0 +1,6 @@
+---最初---
+ForestのmainメソッドでForestModelのopen()でウィンドウをまず開く。
+---Model関連とFile選び,Node,Branch関連----
+ForestModelに、selectMenu()を作る。JFileChooserでテキスト選択を行う。
+テキストを選んだらForestConverterでNodeやらBranchに変換してあげる。
+ForestModelのTreeにNodeとBranchを振り分ける。
