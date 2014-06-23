@@ -24,6 +24,7 @@ public class Node extends Object
 
     /**
        インスタンスを生成して応答する。
+       自身のIDを設定しておき、
        親ノード、子ノードリストをそれぞれ初期化しておく。
     */
     public Node(int anId)
@@ -36,8 +37,9 @@ public class Node extends Object
     
     /**
        インスタンスを生成して応答する。
+       自身のIDを指定された番号に設定し、 
        親ノードに指定されたノードを設定し、
-       子ノードリストを初期化しておく
+       子ノードリストを初期化しておく。
     */ 
     public Node(int anId, Node aParentNode)
     {
@@ -48,6 +50,7 @@ public class Node extends Object
     }
     /**
        インスタンスを生成して応答する。
+       自身のIDを指定された番号に設定し、
        親ノードと子ノードリストに指定されたノード及びリストを設定する。
     */
     public Node(int anId, Node aParentNode, ArrayList<Node> aChildrenList)
