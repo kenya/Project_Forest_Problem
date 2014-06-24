@@ -24,7 +24,7 @@ public class Node extends Object
     /**
      *このノードが属する木。
     */
-    //private Tree tree;
+    private Tree tree;
     /**
      *このノードの名前。
     */ 
@@ -32,7 +32,7 @@ public class Node extends Object
 
     /**
      *インスタンスを生成して応答する。
-     *このノードのノード番号に指定されあ整数を、ラベルに指定された文字列を設定し、 
+     *このノードのノード番号に指定された整数を、ラベルに指定された文字列を設定し、 
      *親ノード、子ノードリストをそれぞれ初期化しておく。
      *@param anId ノード番号
      *@param aLabel ラベル内容
@@ -85,7 +85,7 @@ public class Node extends Object
      *子ノードリストに子供を追加する。
      *@param aChildNode 追加する子ノード 
     */
-    public void addChildNode(Node aChildNode)
+    public void addChild(Node aChildNode)
     {
 	List<Node> aChildrenList = this.getChildren();
 	aChildrenList.add(aChildNode);
