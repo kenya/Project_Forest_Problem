@@ -24,43 +24,46 @@ public class Node extends Object
     /**
        このノードの名前。
     */ 
-    private String name;
+    private String label;
 
     /**
        インスタンスを生成して応答する。
-       このノードのIDを設定しておき、
+       このノードのノード番号に指定されあ整数を、ラベルに指定された文字列を設定し、 
        親ノード、子ノードリストをそれぞれ初期化しておく。
     */
-    public Node(int anId, String aName)
+    public Node(int anId, String aLabel)
     {
 	super();
 	this.nodeId = anId;
+	this.label = aLabel;
 	this.parent = null;
 	this.children = new ArrayList<Node>();
     }
     
     /**
        インスタンスを生成して応答する。
-       このノードのIDを指定された番号に設定し、 
+       このノードのノード番号に指定された整数を、ラベルに指定された文字列を、 
        親ノードに指定されたノードを設定し、
        子ノードリストを初期化しておく。
     */ 
-    public Node(int anId, Node aParentNode)
+    public Node(int anId, String aLabel, Node aParentNode)
     {
 	super();
 	this.nodeId = anId;
+	this.label = aLabel;
 	this.parent = aParentNode;
 	this.children = new ArrayList<Node>();
     }
     /**
        インスタンスを生成して応答する。
-       このノードのIDを指定された番号に設定し、
+       このノードのノード番号に指定された整数を、ラベルに指定された文字列を、 
        親ノードと子ノードリストに指定されたノード及びリストを設定する。
     */
-    public Node(int anId, Node aParentNode, ArrayList<Node> aChildrenList)
+    public Node(int anId, String aLabel, Node aParentNode, ArrayList<Node> aChildrenList)
     {
 	super();
 	this.nodeId = anId;
+	this.label = aLabel;
 	this.parent = aParentNode;
 	this.children = aChildrenList;
     }
