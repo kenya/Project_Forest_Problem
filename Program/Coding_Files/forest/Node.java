@@ -124,6 +124,15 @@ public class Node extends Object
     {
 	return this.children;
     }
+    /**
+     *このノードが属する木を設定する。
+     *@param aTree このノードが属する木
+     */
+    protected void setTree(Tree aTree)
+    {
+	this.tree = aTree;
+	return;
+    }
 
     /**
      *引数のノードとこのノードの一致性を応答する。
