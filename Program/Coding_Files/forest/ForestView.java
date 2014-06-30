@@ -38,9 +38,9 @@ public class ForestView extends mvc.View
 	{
         super.paintComponent(aGraphics);
 			// フォントの処理かな。画像に波の説明を書くこと
-        FourierPaneModel aModel = (FourierPaneModel) this.getModel();
+        ForestModel aModel = (ForestModel)this.getModel();
         Font aFont = new Font(Font.Serif, Font.PLAIN, 12);
-        aGraphics.setColor(Color.white);
+			//aGraphics.setColor(Color.black);
         aGraphics.setFont(aFont);
         int fontHeight = aFont.getSize();
         /*aGraphics.drawString(aModel.label(), 1, fontHeight + 1);
@@ -53,6 +53,11 @@ public class ForestView extends mvc.View
         aGraphics.drawString(aModel.label(), 3, fontHeight + 2);
         aGraphics.drawString(aModel.label(), 3, fontHeight + 3);*/
 		
+		/*
+		 drawRectで四角を描く
+		 Nodeの座標を得て、width,height分の大きさを描く
+		 drawlineでNode同士を結ぶ
+		 */
         aGraphics.setColor(Color.black);
         aGraphics.drawString(aModel.label(), 2, fontHeight + 2);
 		return;
