@@ -37,8 +37,9 @@ public class ForestView extends mvc.View
 	public void paintComponent(Graphics aGraphics)
 	{
         super.paintComponent(aGraphics);
-			// フォントの処理かな。画像に波の説明を書くこと
         ForestModel aModel = (ForestModel)this.getModel();
+			//Branch aBranch = aModel.getBranch(); // Branchを得る
+			//Node aNode = aBranch.getNode(); // みたいな感じで得るのかな。
         Font aFont = new Font(Font.Serif, Font.PLAIN, 12);
 			//aGraphics.setColor(Color.black);
         aGraphics.setFont(aFont);
