@@ -1,4 +1,4 @@
-/* package forest; */
+package forest;
 
 import java.awt.Component;
 import java.awt.Cursor;
@@ -15,20 +15,20 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 
+/**
+ *データを保持および読み書きするModel.
+ *@author Kenji Hirashima
+ */
+
 public class ForestModel extends mvc.Model{
 
-		protected BoxLayout nodeLayout;
-		protected ForestConverter aForestConverter;
-		protected Tree[] allTrees;
-		protected Node currentNode;
-		protected Point currentPoint;
-		protected final int DEFAULT_X = 20;
-		protected final int DEFAULT_Y = 20;
-		protected final int FOREST_TYPE = 0;
-		protected final int SEMILATTICE_TYPE = 1;
-		protected final int TREE_TYPE = 2;
+		private ArrayList<String> inputStringArray;
+		private ArrayList<Tree> treeArray;
+		private Node currentNode;
+		private Point currentPoint;
 
 		public void open(){
+				BoxLayout nodeLayout;
 				showSelectMenu();
 				allTrees = aForestMenu.getAllTrees();
 				nodeLayout = new BoxLayout(this, aForestConverter.getAllNodes.length);
@@ -45,4 +45,9 @@ public class ForestModel extends mvc.Model{
 		public void showSelectMenu(){
 
 		}
+
+		public void setTreeArray(ArrayList<String> inputStringArray){
+				
+		}
+
 }
