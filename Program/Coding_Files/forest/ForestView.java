@@ -6,7 +6,7 @@ import java.awt.Graphics;
 //import java.awt.Point;
 
 /**
- * BranchとNodeを描くためのView
+ * View
  * @author kenya shinki
  */
 public class ForestView extends mvc.View
@@ -23,7 +23,7 @@ public class ForestView extends mvc.View
 	}
 	
 	/**
-	 * 描画を行う。ここで全てのnodeとbranchを書いてしまう。スクロールに関してはViewで行う。
+	 * 描画を行う。ここで全ての全体図を書いてしまう。スクロールに関してはViewで行う。
      * @param aGraphics グラフィックス
 	 */
 	public void paintComponent(Graphics aGraphics)
