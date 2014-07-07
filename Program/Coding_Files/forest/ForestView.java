@@ -3,7 +3,7 @@ package forest;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-//import java.awt.Point;
+import java.awt.Point;
 
 /**
  * View
@@ -30,8 +30,7 @@ public class ForestView extends mvc.View
 	{
         super.paintComponent(aGraphics);
         ForestModel aModel = (ForestModel)this.getModel();
-			//Branch aBranch = aModel.getBranch(); // Branchを得る
-			//Node aNode = aBranch.getNode(); // みたいな感じで得るのかな。
+		
         Font aFont = new Font(Font.Serif, Font.PLAIN, 12);
 			//aGraphics.setColor(Color.black);
         aGraphics.setFont(aFont);
@@ -50,9 +49,20 @@ public class ForestView extends mvc.View
 		 drawRectで四角を描く
 		 Nodeの座標を得て、width,height分の大きさを描く
 		 drawlineでNode同士を結ぶ
+		 ここですべて描いちゃう。未完成
 		 */
         aGraphics.setColor(Color.black);
-        aGraphics.drawString(aModel.label(), 2, fontHeight + 2);
+		
+		for(Branch aBranch : aModel.getBranch()){
+			aGraphics.drawLine(aBranch.getStartPoint().getX(), aBranch.getStartPoint().getY(), aBranch.getEndPoint().getX(), aBranch.getEndPoint().getY());
+			Node aChildNode = aBranch.getChildNode();
+			aGraphics.drawString(aChildNode.getLabel(), aChildNode.getPoint().getX(), aChildNode.getPoint().getY());
+			aGraphics.drawRect(aChildNode.getPoint().getX(), aChildNode.getPoint().getY(), width, height);
+			Node aParentNode = aBranch.getParentNode();
+			aGraphics.drawString(aParentNode.getLabel(), aParentNode.getPoint().getX(), aParentNode.getPoint().getY());
+				//aGraphics.drawString(aModel.label(), aChildNode.getPoint().getX(), aChildNode.getPoint().getY(), aBranch.getStartPoint().getX() - aChildNode.getPoint().getX(), height);
+
+		}
 		return;
 	}
 }
