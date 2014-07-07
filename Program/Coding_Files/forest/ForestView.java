@@ -11,14 +11,6 @@ import java.awt.Graphics;
  */
 public class ForestView extends mvc.View
 {
-	/**
-	 * 指定されたモデルでMVCを構築するコンストラクタ。
-     * @param aModel モデル
-	 */
-	public ForestView(ForestModel aModel)
-	{
-		super(aModel, new ForestController());
-	}
 	
 	/**
 	 * 指定されたモデルとコントローラでMVCを構築するコンストラクタ。
@@ -31,7 +23,7 @@ public class ForestView extends mvc.View
 	}
 	
 	/**
-	 * 描画を行う。
+	 * 描画を行う。ここで全てのnodeとbranchを書いてしまう。スクロールに関してはViewで行う。
      * @param aGraphics グラフィックス
 	 */
 	public void paintComponent(Graphics aGraphics)
