@@ -53,12 +53,12 @@ public class ForestView extends mvc.View
 			Node aChildNode = aBranch.getChildNode();
 			aGraphics.drawString(aChildNode.getLabel(), aChildNode.getPoint().getX(), aChildNode.getPoint().getY());
 			int width = aMetrics.stringWidth(aChildNode.getLabel());
-			aGraphics.drawRect(aChildNode.getPoint().getX(), aChildNode.getPoint().getY(), aChildNode.getPoint().getX()+width, aChildNode.getPoint().getY()+fontHeight);
+			aGraphics.drawRect(aChildNode.getPoint().getX(), aChildNode.getPoint().getY(), width, fontHeight);
 			
 			Node aParentNode = aBranch.getParentNode();
 			aGraphics.drawString(aParentNode.getLabel(), aParentNode.getPoint().getX(), aParentNode.getPoint().getY());
 			width = aMetrics.stringWidth(aParentNode.getLabel());
-			aGraphics.drawRect(aParentNode.getPoint().getX(), aParentNode.getPoint().getY(), aParentNode.getPoint().getX()+width, aParentNode.getPoint().getY()+fontHeight);
+			aGraphics.drawRect(aParentNode.getPoint().getX(), aParentNode.getPoint().getY(), width, fontHeight);
 		}
 		return;
 	}
