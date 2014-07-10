@@ -2,6 +2,7 @@ package forest;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Point;
 
@@ -32,18 +33,10 @@ public class ForestView extends mvc.View
         ForestModel aModel = (ForestModel)this.getModel();
 		
         Font aFont = new Font(Font.Serif, Font.PLAIN, 12);
-			//aGraphics.setColor(Color.black);
+		FontMetrics aMetrics = new FontMetrics(aFont); // stringのwidthを知るために使用する
+		aGraphics.setColor(Color.black);
         aGraphics.setFont(aFont);
         int fontHeight = aFont.getSize();
-        /*aGraphics.drawString(aModel.label(), 1, fontHeight + 1);
-        aGraphics.drawString(aModel.label(), 1, fontHeight + 2);
-        aGraphics.drawString(aModel.label(), 1, fontHeight + 3);
-        aGraphics.drawString(aModel.label(), 2, fontHeight + 1);
-        aGraphics.drawString(aModel.label(), 2, fontHeight + 2);
-        aGraphics.drawString(aModel.label(), 2, fontHeight + 3);
-        aGraphics.drawString(aModel.label(), 3, fontHeight + 1);
-        aGraphics.drawString(aModel.label(), 3, fontHeight + 2);
-        aGraphics.drawString(aModel.label(), 3, fontHeight + 3);*/
 		
 		/*
 		 drawRectで四角を描く
@@ -54,14 +47,18 @@ public class ForestView extends mvc.View
         aGraphics.setColor(Color.black);
 		
 		for(Branch aBranch : aModel.getBranch()){
-			aGraphics.drawLine(aBranch.getStartPoint().getX(), aBranch.getStartPoint().getY(), aBranch.getEndPoint().getX(), aBranch.getEndPoint().getY());
+			
+			aGraphics.drawLine(aBranch.getStartPoint().getX(), aBranch.getStartPoint().getY()+fontHeight/2, aBranch.getEndPoint().getX(), aBranch.getEndPoint().getY()+fontHeight/2);
+			
 			Node aChildNode = aBranch.getChildNode();
 			aGraphics.drawString(aChildNode.getLabel(), aChildNode.getPoint().getX(), aChildNode.getPoint().getY());
-			aGraphics.drawRect(aChildNode.getPoint().getX(), aChildNode.getPoint().getY(), width, height);
+			int width = aMetrics.stringWidth(aChildNode.getLabel());
+			aGraphics.drawRect(aChildNode.getPoint().getX(), aChildNode.getPoint().getY(), aChildNode.getPoint().getX()+width, aChildNode.getPoint().getY()+fontHeight);
+			
 			Node aParentNode = aBranch.getParentNode();
 			aGraphics.drawString(aParentNode.getLabel(), aParentNode.getPoint().getX(), aParentNode.getPoint().getY());
-				//aGraphics.drawString(aModel.label(), aChildNode.getPoint().getX(), aChildNode.getPoint().getY(), aBranch.getStartPoint().getX() - aChildNode.getPoint().getX(), height);
-
+			width = aMetrics.stringWidth(aParentNode.getLabel());
+			aGraphics.drawRect(aParentNode.getPoint().getX(), aParentNode.getPoint().getY(), aParentNode.getPoint().getX()+width, aParentNode.getPoint().getY()+fontHeight);
 		}
 		return;
 	}
